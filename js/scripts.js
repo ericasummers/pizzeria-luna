@@ -19,42 +19,49 @@ var spinach = { name: "spinach", price: 0.45 };
 var bacon = { name: "bacon", price: 0.85 };
 var extracheese = { name: "extracheese", price: 0.60 };
 
+var toppingPrice = 0;
+
 Pizza.prototype.sizePricing = function () {
-  this.sizes.forEach(function(size) {
-    return size.price;
-  });
+      return (window[this.sizes].price);
 }
+
 Pizza.prototype.toppingsPricing = function() {
   this.toppings.forEach(function(topping) {
-    return toppings.price;
+    return (window[this]).price += toppingPrice;
   });
 }
+
+// Pizza.prototype.totalPrice = function() {
+//   return sizePrice + toppingPrice;
+// }
 
 
 $(document).ready(function() {
   $("form.order-form").submit(function(event) {
     event.preventDefault();
+    $("#chosen-toppings").empty();
     var inputtedName = $("input#user-name").val();
     var newPizza = new Pizza(inputtedName);
-    var inputtedSize = $("#pizza-size").map(function() {
+    var inputtedSize = $("#pizza-size").each(function() {
       newPizza.sizes.push($(this).val());
     });
-    var inputtedToppings = $("input:checkbox[name=topping-options]:checked").map(function() {
+    var inputtedToppings = $("input:checkbox[name=topping-options]:checked").each(function() {
       var toppingOptionsChosen = $(this).val();
       newPizza.toppings.push(toppingOptionsChosen);
-      $("#chosen-toppings").append(toppingOptionsChosen + ", ");
+      $("#chosen-toppings").append("<li>" + toppingOptionsChosen + "</li>");
     });
 
     $("#namedisplay").text(inputtedName);
     $("#chosen-size").text(newPizza.sizes);
-    alert(newPizza.sizes);
 
+    // var totalPizzaPrice = newPizza.sizePricing() + newPizza.toppingsPricing();
+    var sizePriceOnly = window[newPizza.sizes].price;
+    // var toppingsPriceOnly = inputtedToppings.each(function() {
+    //   window[newPizza.toppings].price;
+    // });
+    alert(newPizza.sizePricing());
 
-    alert(newPizza.toppings);
-
-    var totalPizzaPrice = newPizza.sizePricing + newPizza.toppingsPricing;
-
-    $(".pizza-price").text(totalPizzaPrice);
+    $(".pizza-price").text(newPizza.sizePricing());
 
     $("input#user-name").val("");
   });
