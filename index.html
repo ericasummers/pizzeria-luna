@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-3.1.1.js"></script>
+    <script src="js/scripts.js"></script>
+    <title>Pizzeria Luna</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome to Pizzeria Luna!</h1>
+      <p>Select the pizza size of your choice and your topping options to place an order for one of our delicious pizzas!</p>
+
+      <div class="panel" id="pizza-order">
+        <div class="panel-body">
+          <form class="order-form">
+            <div class="form-group">
+              <label for="user-name">Enter your name:</label>
+              <input type="text" id="user-name" class="form-control">
+            </div>
+            <select class="form-control" id="pizza-size">
+              <option value="medium">Medium: 12 inches</option>
+              <option value="large">Large: 14 inches</option>
+            </select>
+            <div class="form-group">
+              <p>Pick one or more of our delicious toppings!</p>
+              <input type="checkbox" name="topping-options" value="pepperoni">Pepperoni
+              <input type="checkbox" name="topping-options" value="sausage">Sausage
+              <input type="checkbox" name="topping-options" value="mushrooms">Mushrooms
+              <input type="checkbox" name="topping-options" value="peppers">Green Peppers
+              <input type="checkbox" name="topping-options" value="onions">Onions
+              <input type="checkbox" name="topping-options" value="olives">Black olives
+              <input type="checkbox" name="topping-options" value="ham">Ham
+              <input type="checkbox" name="topping-options" value="pineapple">Pineapple
+              <input type="checkbox" name="topping-options" value="spinach">Spinach
+              <input type="checkbox" name="topping-options" value="bacon">Bacon
+              <input type="checkbox" name="topping-options" value="extra-cheese">Extra Cheese
+            </div>
+            <button type="submit" class="btn">Make my pizza!</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="options-display">
+        <h2>Your order:</h2>
+        <ul class="unstyled">
+
+        </ul>
+        <p>Happy with your pizza?</p>
+        <button type="button" class="btn">Yes, place my order!</button><button type="button" class="btn">No, restart order</button>
+      </div>
+
+      <div class="final-results">
+        <h2>Your order has been processed!</h2>
+
+        <p>Thank you for ordering from Pizzeria Luna. Your order will be prepared for you momentarily! Don't forget to tip your driver. Bon appetit!</p>
+      </div>
+    </div>
+
+  </body>
+</html>
