@@ -6,16 +6,18 @@
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-3.1.1.js"></script>
     <script src="js/scripts.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
     <title>Pizzeria Luna</title>
   </head>
   <body>
     <div class="container">
       <h1>Welcome to Pizzeria Luna!</h1>
-      <p>Select the pizza size of your choice and your topping options to place an order for one of our delicious pizzas!</p>
+      <p class="intro">Select the pizza size of your choice and your topping options to place an order for one of our delicious pizzas!</p>
 
       <div class="panel" id="pizza-order">
         <div class="panel-body">
           <form class="order-form">
+            <h2>Place your order:</h2>
             <div class="form-group">
               <label for="user-name">Enter your name:</label>
               <input type="text" id="user-name" class="form-control">
@@ -25,6 +27,7 @@
               <option value="medium">Medium: 12 inches</option>
               <option value="large">Large: 14 inches</option>
             </select>
+            <br>
             <div class="form-group">
               <p>Pick one or more of our delicious toppings!</p>
               <input type="checkbox" name="topping-options" value="pepperoni">Pepperoni

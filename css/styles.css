@@ -1,0 +1,43 @@
+body {
+  text-align: center;
+}
+
+#pizza-order {
+  background-color: #EAAE8E;
+}
+
+#pizza-order h2 {
+  color: white;
+  font-family: 'Satisfy', cursive;
+}
+
+body {
+  background-color: #D08861;
+}
+
+h1 {
+  font-family: 'Satisfy', cursive;
+  color: white;
+}
+
+.intro {
+  color: white;
+}
+
+#final-results {
+  background-color: #8BCD5A;
+  color: white;
+}
+
+#options-display {
+  background-color: #DCD05E;
+}
+
+#options-display h2 {
+  font-family: 'Satisfy', cursive;
+  color: white;
+}
+
+#final-results h2 {
+  font-family: 'Satisfy', cursive;
+}
