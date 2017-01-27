@@ -31,5 +31,18 @@ Pizza.prototype.toppingsPricing = function() {
 
 
 $(document).ready(function() {
-  
+  $("form.order-form").submit(function(event) {
+    event.preventDefault;
+    var inputtedName = $("input#user-name").val();
+    var inputtedSize = $("#pizza-size").each(function() {
+      var sizeChosen = $(this).val();
+      newPizza.size.push(sizeChosen);
+    });
+    var inputtedToppings = $("input:checkbox[name=topping-options]:checked").each(function() {
+      var toppingOptionsChosen = $(this).val();
+      newPizza.toppings.push(toppingOptionsChosen);
+    });
+    var newPizza = new Pizza(inputtedSize, inputtedToppings); 
+
+  })
 });
