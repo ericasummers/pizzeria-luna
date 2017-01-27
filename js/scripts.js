@@ -1,6 +1,6 @@
 function Pizza(sizes, toppings) {
-  this.sizes: [];
-  this.toppings: [];
+  this.sizes = [];
+  this.toppings = [];
 }
 
 var medium = { name: "medium", price: 8.00 };
@@ -16,7 +16,7 @@ var ham = { name: "ham", price: 0.89 };
 var pineapple = { name: "pineapple", price: 0.60 };
 var spinach = { name: "spinach", price: 0.45 };
 var bacon = { name: "bacon", price: 0.85 };
-var extra-cheese = { name: "extra-cheese", price: 0.60 };
+var extracheese = { name: "extracheese", price: 0.60 };
 
 Pizza.prototype.sizePricing = function () {
   this.sizes.forEach(function(size) {
@@ -34,6 +34,7 @@ $(document).ready(function() {
   $("form.order-form").submit(function(event) {
     event.preventDefault;
     var inputtedName = $("input#user-name").val();
+    var newPizza = new Pizza(inputtedSize, inputtedToppings);
     var inputtedSize = $("#pizza-size").each(function() {
       var sizeChosen = $(this).val();
       newPizza.size.push(sizeChosen);
@@ -42,7 +43,14 @@ $(document).ready(function() {
       var toppingOptionsChosen = $(this).val();
       newPizza.toppings.push(toppingOptionsChosen);
     });
-    var newPizza = new Pizza(inputtedSize, inputtedToppings); 
 
-  })
+    $(".chosen-size").text(newPizza.size);
+    $(".chosen-toppings").text(newPizza.toppings);
+
+    var totalPizzaPrice = newPizza.sizePricing + newPizza.toppingsPricing;
+
+    $(".pizza-price").text(totalPizzaPrice);
+
+    $("input#user-name").val("");
+  });
 });
