@@ -20,6 +20,7 @@
               <label for="user-name">Enter your name:</label>
               <input type="text" id="user-name" class="form-control">
             </div>
+            <p>Select your size:</p>
             <select class="form-control" id="pizza-size">
               <option value="medium">Medium: 12 inches</option>
               <option value="large">Large: 14 inches</option>
@@ -43,19 +44,23 @@
         </div>
       </div>
 
-      <div class="options-display">
-        <h2>Your order:</h2>
-        <ul class="unstyled">
+      <div class="panel" id="options-display">
+        <div class="panel-body">
+          <h2>Your order:</h2>
+          <ul class="unstyled">
 
-        </ul>
-        <p>Happy with your pizza?</p>
-        <button type="button" class="btn">Yes, place my order!</button><button type="button" class="btn">No, restart order</button>
+          </ul>
+          <p>Happy with your pizza?</p>
+          <button type="button" class="btn">Yes, place my order!</button>&nbsp;&nbsp;<button type="button" class="btn">No, restart order</button>
+        </div>
       </div>
 
-      <div class="final-results">
-        <h2>Your order has been processed!</h2>
+      <div class="panel" id="final-results">
+        <div class="panel-body">
+          <h2>Your order has been processed!</h2>
 
-        <p>Thank you for ordering from Pizzeria Luna. Your order will be prepared for you momentarily! Don't forget to tip your driver. Bon appetit!</p>
+          <p>Thank you for ordering from Pizzeria Luna. Your order will be prepared for you momentarily! Don't forget to tip your driver. Bon appetit!</p>
+        </div>
       </div>
     </div>
 
