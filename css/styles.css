@@ -79,3 +79,13 @@ h1 {
 #clear-order:hover {
   color: white;
 }
+
+#namedisplay {
+  font-family: 'Cookie', cursive;
+  font-size: 30px;
+}
+
+#chosen-size {
+  font-weight: bold;
+  color: darkgreen;
+}

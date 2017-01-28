@@ -41,6 +41,9 @@ Pizza.prototype.totalPrice = function() {
 }
 
 $(document).ready(function() {
+
+  $("#pizza-size").val("");
+
   $("form.order-form").submit(function(event) {
     event.preventDefault();
     $("#chosen-toppings").empty();
@@ -95,6 +98,6 @@ $(document).ready(function() {
 
     $("input#user-name").val("");
     $("#pizza-size").val("");
-    $("input:checkbox").removeAttr("checked");
+    $("input:checkbox").prop('checked',false);
   });
 });
