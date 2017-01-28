@@ -7,20 +7,6 @@ function Pizza(name) {
 var medium = { name: "medium", price: 8.00 };
 var large = { name: "large", price: 10.00 };
 
-// var toppingOptions = {
-//   pepperoni: 0.99,
-//   sausage: 0.99,
-//   mushrooms: 0.49,
-//   peppers: 0.39,
-//   onions: 0.30,
-//   olives: 0.55,
-//   ham: 0.89,
-//   pineapple: 0.60,
-//   spinach: 0.45,
-//   bacon: 0.85,
-//   extracheese: 0.60
-// }
-
 var pepperoni = { name: "pepperoni", price: 0.99 };
 var sausage = { name: "sausage", price: 0.99 };
 var mushrooms = { name: "mushrooms", price: 0.49 };
@@ -34,22 +20,24 @@ var bacon = { name: "bacon", price: 0.85 };
 var extracheese = { name: "extracheese", price: 0.60 };
 
 Pizza.prototype.sizePricing = function () {
-      return (window[this.sizes].price);
+  return (window[this.sizes].price);
 }
 
-Pizza.prototype.toppingsPricing = function() {
-  this.toppings.forEach(function(topping) {
-    alert(topping.this.price);
-  });
-  // var noPrice = 0;
-  // return noPrice += toppingPrice;
-  // for (var i=0; i<this.toppings.length; i++) {
-    // return toppingPrice += (toppingOptions.window[this.toppings[i]]);
-  // }
+// Pizza.prototype.toppingPricing = function() {
+//   return (window[this.toppings].price);
+//   alert(window[this.toppings].price);
+// }
+
+var toppingsPrices = [];
+Pizza.prototype.allToppingsPricing = function () {
+  totalToppingPrices = 0;
+  for (var i = 0; i < toppingsPrices; i += 1) {
+    totalToppingPrices += toppingsPrices[i];
+  }
 }
 
 Pizza.prototype.totalPrice = function() {
-  return this.sizePricing() + this.toppingsPricing();
+  return this.sizePricing() + this.toppingPricing();
 }
 
 
@@ -71,15 +59,19 @@ $(document).ready(function() {
     $("#namedisplay").text(inputtedName);
     $("#chosen-size").text(newPizza.sizes);
 
-    // var totalPizzaPrice = newPizza.sizePricing() + newPizza.toppingsPricing();
-    // var toppingsPriceOnly = inputtedToppings.each(function() {
-    //   window[newPizza.toppings].price;
-    // });
-    alert(newPizza.toppings);
-    alert(newPizza.toppingsPricing());
+    newPizza.toppings.forEach(function(topping) {
+      toppingsPrices.push((window[topping]).price);
+    });
 
-    $(".pizza-price").text(newPizza.totalPrice());
+    alert(toppingsPrices);
+
+    $(".pizza-price").text(newPizza.sizePricing());
 
     $("input#user-name").val("");
   });
+
+  $("#place-order").click(function() {
+    $("#final-results").show();
+    $("#options-display").hide();
+  })
 });

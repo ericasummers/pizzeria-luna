@@ -27,6 +27,7 @@ h1 {
 #final-results {
   background-color: #8BCD5A;
   color: white;
+  display: none;
 }
 
 #options-display {
