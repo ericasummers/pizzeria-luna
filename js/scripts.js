@@ -27,7 +27,7 @@ Pizza.prototype.sizePricing = function () {
 
 Pizza.prototype.toppingsPricing = function() {
   this.toppings.forEach(function(topping) {
-    toppingsPrices.push((window[topping]).price);
+    toppingsPrices.push(window[topping].price);
   });
   var totalToppingPrices = 0;
   return parseFloat(totalToppingPrices += (toppingsPrices));
@@ -56,6 +56,11 @@ $(document).ready(function() {
     $("#chosen-size").text(newPizza.sizes);
 
     alert(newPizza.toppings);
+
+    // var toppingPriceList = newPizza.each(function() {
+    //
+    // });
+
     alert(toppingsPrices);
 
     $(".pizza-price").text(newPizza.totalPrice());
@@ -68,5 +73,13 @@ $(document).ready(function() {
   $("#place-order").click(function() {
     $("#final-results").show();
     $("#options-display").hide();
-  })
+  });
+
+  $("#clear-order").click(function() {
+    $("#final-results").hide();
+    $("#options-display").hide();
+
+    $("input#user-name").val("");
+    $("inputtedSize").val("");
+  });
 });
