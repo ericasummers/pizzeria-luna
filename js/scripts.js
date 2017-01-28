@@ -55,17 +55,18 @@ $(document).ready(function() {
     $("#namedisplay").text(inputtedName);
     $("#chosen-size").text(newPizza.sizes);
 
-    alert(newPizza.toppings);
+    // alert(newPizza.toppings);
 
     // var toppingPriceList = newPizza.each(function() {
     //
     // });
 
-    alert(toppingsPrices);
+    // alert(toppingsPrices);
 
     $(".pizza-price").text(newPizza.totalPrice());
 
     $("#options-display").show();
+    $("#final-results").hide();
 
     $("input#user-name").val("");
   });
