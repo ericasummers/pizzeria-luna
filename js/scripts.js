@@ -77,6 +77,7 @@ $(document).ready(function() {
 
     $("#options-display").show();
     $("#final-results").hide();
+    $("#pizza-order").hide();
 
     $("input#user-name").val("");
   });
@@ -84,13 +85,16 @@ $(document).ready(function() {
   $("#place-order").click(function() {
     $("#final-results").show();
     $("#options-display").hide();
+    $("#pizza-order").hide();
   });
 
   $("#clear-order").click(function() {
     $("#final-results").hide();
     $("#options-display").hide();
+    $("#pizza-order").show();
 
     $("input#user-name").val("");
-    $("inputtedSize").val("");
+    $("#pizza-size").val("");
+    $("input:checkbox").removeAttr("checked");
   });
 });
