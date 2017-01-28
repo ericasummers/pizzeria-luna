@@ -19,27 +19,23 @@ var spinach = { name: "spinach", price: 0.45 };
 var bacon = { name: "bacon", price: 0.85 };
 var extracheese = { name: "extracheese", price: 0.60 };
 
+var toppingsPrices = [];
+
 Pizza.prototype.sizePricing = function () {
   return (window[this.sizes].price);
 }
 
-// Pizza.prototype.toppingPricing = function() {
-//   return (window[this.toppings].price);
-//   alert(window[this.toppings].price);
-// }
-
-var toppingsPrices = [];
-Pizza.prototype.allToppingsPricing = function () {
-  totalToppingPrices = 0;
-  for (var i = 0; i < toppingsPrices; i += 1) {
-    totalToppingPrices += toppingsPrices[i];
-  }
+Pizza.prototype.toppingsPricing = function() {
+  this.toppings.forEach(function(topping) {
+    toppingsPrices.push((window[topping]).price);
+  });
+  var totalToppingPrices = 0;
+  return parseFloat(totalToppingPrices += (toppingsPrices));
 }
 
 Pizza.prototype.totalPrice = function() {
-  return this.sizePricing() + this.toppingPricing();
+  return this.sizePricing() + this.toppingsPricing();
 }
-
 
 $(document).ready(function() {
   $("form.order-form").submit(function(event) {
@@ -59,13 +55,12 @@ $(document).ready(function() {
     $("#namedisplay").text(inputtedName);
     $("#chosen-size").text(newPizza.sizes);
 
-    newPizza.toppings.forEach(function(topping) {
-      toppingsPrices.push((window[topping]).price);
-    });
-
+    alert(newPizza.toppings);
     alert(toppingsPrices);
 
-    $(".pizza-price").text(newPizza.sizePricing());
+    $(".pizza-price").text(newPizza.totalPrice());
+
+    $("#options-display").show();
 
     $("input#user-name").val("");
   });
