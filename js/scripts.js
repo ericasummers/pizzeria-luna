@@ -65,10 +65,7 @@ $(document).ready(function() {
     newPizza.toppings.forEach(function(topping) {
       return (totalToppingPrices += (window[topping].price));
     });
-    alert(newPizza.toppings);
-    alert(newPizza.sizePricing());
-    alert(totalToppingPrices.toFixed(2));
-    // alert(newPizza.toppingsPricing());
+
 
     // var toppingPriceList = newPizza.each(function() {
     //
