@@ -48,11 +48,19 @@ $(document).ready(function() {
     event.preventDefault();
     $("#chosen-toppings").empty();
     var inputtedName = $("input#user-name").val();
+    if (!inputtedName) {
+      alert("Please enter your name.");
+    }
+
     var totalToppingPrices = 0;
     var newPizza = new Pizza(inputtedName);
     var inputtedSize = $("#pizza-size").each(function() {
       newPizza.sizes.push($(this).val());
     });
+    if (!inputtedSize) {
+      alert("Please select a pizza size.")
+    }
+    
     var inputtedToppings = $("input:checkbox[name=topping-options]:checked").each(function() {
       var toppingOptionsChosen = $(this).val();
       newPizza.toppings.push(toppingOptionsChosen);
@@ -73,7 +81,7 @@ $(document).ready(function() {
 
     // alert(toppingsPrices);
     //
-    $(".pizza-price").text(newPizza.sizePricing() + totalToppingPrices);
+    $(".pizza-price").text((newPizza.sizePricing() + totalToppingPrices).toFixed(2));
 
     $("#options-display").show();
     $("#final-results").hide();
