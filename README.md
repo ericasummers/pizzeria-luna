@@ -16,11 +16,11 @@ _The user will select the pizza size and choose the toppings to go on it, then c
 
 |Event|Outcome|Example|
 |------|------|-------|
-|Click "Choose Pizza"|Size is displayed|"You have chosen 'Large!''|
+|Select a size from drop-down|Size is displayed|"You have chosen 'Large!''|
 |Select toppings from options|Selected toppings will be listed|"You have chosen: 'pepperoni and mushrooms'"|
-|Hit "View Price"|Price for option selected is displayed|"Your pizza will cost $12!"|
-|User selects "Order pizza"|Message is returned confirming order|"Your order has been placed!"|
-|User selects "Change my order"|Options are reset to allow user to restart selections|"Please start your selection"|
+|Hit "Make my pizza"|Price for option selected is displayed|"Your pizza will cost $12!"|
+|User selects "Place my order"|Message is returned confirming order|"Your order has been placed!"|
+|User selects "No, restart order"|Options are reset to allow user to restart selections|"Please start your selection"|
 
 ## Setup/Installation Requirements
 
