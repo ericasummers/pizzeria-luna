@@ -14,13 +14,16 @@ _The user will select the pizza size and choose the toppings to go on it, then c
 
 ## Specifications
 
-|Event|Outcome|Example|
+|Description|Input|Output|
 |------|------|-------|
-|Select a size from drop-down|Size is displayed|"You have chosen 'Large!''|
-|Select toppings from options|Selected toppings will be listed|"You have chosen: 'pepperoni and mushrooms'"|
-|Hit "Make my pizza"|Price for option selected is displayed|"Your pizza will cost $12!"|
-|User selects "Place my order"|Message is returned confirming order|"Your order has been placed!"|
-|User selects "No, restart order"|Options are reset to allow user to restart selections|"Please start your selection"|
+|User enters name and selects a plain medium pizza with no toppings|User selects "medium" from dropdown menu, enters name in text field and clicks "Make my pizza!"|Order is displayed as "A medium pizza", "This pizza costs $8.00"|
+|User enters name and selects a plain medium pizza with one topping|User selects "medium" from dropdown menu, enters name in text field, selects "pepperoni", and clicks "Make my pizza!"|Order is displayed as "A medium pizza with pepperoni", "This pizza costs $8.99"|
+|User enters name and selects a plain medium pizza with two toppings|User selects "medium" from dropdown menu, enters name in text field, selects "pepperoni" and "mushrooms", and clicks "Make my pizza!"|Order is displayed as "A medium pizza with pepperoni and mushrooms", "This pizza costs $9.48"|
+|User enters name and selects a plain large pizza with no toppings|User selects "large" from dropdown menu, enters name in text field, and clicks "Make my pizza!"|Order is displayed as "A large pizza", "This pizza costs $10.00"|
+|User enters name and selects a plain large pizza with one topping|User selects "large" from dropdown menu, enters name in text field, selects "sausage", and clicks "Make my pizza!"|Order is displayed as "A large pizza with sausage", "This pizza costs $10.99"|
+|User enters name and selects a plain large pizza with two toppings|User selects "large" from dropdown menu, enters name in text field, selects "sausage" and "green peppers", and clicks "Make my pizza!"|Order is displayed as "A large pizza with sausage and peppers", "This pizza costs $11.38"|
+|Once price and order is displayed, user would like to place order|Under order display, user selects "Yes, place my order"|Message is displayed stating "Your order has been processed!"|
+|Once price and order is displayed, user would like to cancel and re-do order|Under order display, user selects "No, restart order"|Page returns to blank order form with name text box, and blank size and toppings options to choose|
 
 ## Setup/Installation Requirements
 
